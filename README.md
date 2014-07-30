@@ -28,4 +28,21 @@ Usage
 Once the extension is installed, simply use it in your code by  :
 
 ```php
-<?= \guzuomuse\JqueryCustomContentScroller\AutoloadExample::widget(); ?>```
+                        <?php
+        JqueryCustomContentScroller::begin([
+            'options'=>[
+
+            ],
+            'pluginOptions'=>[
+                'setWidth'=>'100%',
+                'axis'=>'x',
+                'scrollButtons'=>new JsExpression('{enable:true}'),
+                'theme'=>'rounded-dark',
+//                'scrollInertia'=>3000,
+                'scrollbarPosition'=>'outside',
+                'autoHideScrollbar'=>true,
+//                'autoExpandScrollbar'=>true,
+            ],
+        ]);
+        ?> 
+ ```
