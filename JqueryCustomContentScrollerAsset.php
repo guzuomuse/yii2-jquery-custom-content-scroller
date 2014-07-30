@@ -9,11 +9,13 @@ class JqueryCustomContentScrollerAsset extends AssetBundle{
 	public $sourcePath = '@JqueryCustomContentScroller/assets/';
 
 	public $js = [
-		"jquery.mCustomScrollbar.min.js"
+		"jquery.mCustomScrollbar.min.js",
+                'jquery.mousewheel.min.js',
 	];
 
 	public $css = [
 		"jquery.mCustomScrollbar.css",
+                
 	];
 
 //	public $publishOptions = [

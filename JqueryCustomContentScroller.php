@@ -27,7 +27,7 @@ class JqueryCustomContentScroller extends \yii\base\Widget {
             $this->options['id'] = $this->getId();
         }        
         echo Html::beginTag('div', $this->options) . "\n";
-        NiceScrollAsset::register($this->view,  \yii\web\View::POS_READY);
+        JqueryCustomContentScrollerAsset::register($this->view,  \yii\web\View::POS_READY);
         $this->registerJs();
     }
     
@@ -41,12 +41,19 @@ class JqueryCustomContentScroller extends \yii\base\Widget {
             $options.=$k.':'.  Json::encode($v).',';
 //            $options.=$k.':'.  $v;
         }
+        if(empty($this->pluginOptions)){
+            $js='$("#'.$this->id.'").mCustomScrollbar();';                    
+        }                 
+        else{
         $js=<<<EOD
+$("#$this->id").mCustomScrollbar({{$options}});       
 
-       $("#$this->id").mCustomScrollbar({{$options}});         
-       
-       
 EOD;
+        
+
+}
+        
+        
         $this->view->registerJs($js);
     }
 }
